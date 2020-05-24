@@ -6,7 +6,11 @@
     <img src="{{post_1.image.url}}" alt="Картинка" width="300" height=" 200" />
 {% endif %}
 
-<p>{{post_1.content | linebreaksbr}}</p>
+{% autoescape off %}
+
+<p> {{ post_1.content|linebreaksbr }} </p> {# вывод содержания поста по абзацам #}
+
+{% endautoescape %}
 
 
 {% if user.is_authenticated %}
